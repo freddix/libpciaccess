@@ -1,7 +1,7 @@
 Summary:	libpciaccess library to access PCI bus and devices
 Name:		libpciaccess
 Version:	0.13.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/archive/individual/lib/%{name}-%{version}.tar.bz2
@@ -11,7 +11,6 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkg-config
-Requires:	pciutils
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -38,8 +37,7 @@ use pciaccess library.
 %{__automake}
 %configure \
 	--disable-silent-rules	\
-	--disable-static	\
-	--with-pciids-path=/etc
+	--disable-static
 %{__make}
 
 %install
@@ -48,6 +46,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
