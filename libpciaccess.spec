@@ -1,11 +1,11 @@
 Summary:	libpciaccess library to access PCI bus and devices
 Name:		libpciaccess
-Version:	0.13.3
+Version:	0.13.4
 Release:	1
 License:	MIT
 Group:		X11/Libraries
 Source0:	http://xorg.freedesktop.org/archive/individual/lib/%{name}-%{version}.tar.bz2
-# Source0-md5:	1f65be5ffc55641c1846c2f41d180d00
+# Source0-md5:	ace78aec799b1cf6dfaea55d3879ed9f
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
